@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Component Test";
+}
+
+<h1>Component Test</h1>
+<div class="card card-body bg-primary text-white">
+    This is from View page.
+</div>
+<br />
+@await Component.InvokeAsync("People");
+

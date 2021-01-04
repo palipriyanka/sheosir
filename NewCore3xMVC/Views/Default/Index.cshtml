@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+
+    var id = ViewContext.RouteData.Values["id"];
+    var name = ViewContext.RouteData.Values["username"];
+
+}
+
+<h1>Index</h1>
+
+<div class="çard card-body bg-warning">
+    ID: @id  
+    <p>
+        Name: @name
+    </p>
+</div>
+
+Add your <strong>HTML</strong> content here.

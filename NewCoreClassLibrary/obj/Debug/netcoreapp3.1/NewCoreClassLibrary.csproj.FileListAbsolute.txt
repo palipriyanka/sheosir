@@ -1,0 +1,9 @@
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\bin\Debug\netcoreapp3.1\NewCoreClassLibrary.deps.json
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\bin\Debug\netcoreapp3.1\NewCoreClassLibrary.dll
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\bin\Debug\netcoreapp3.1\NewCoreClassLibrary.pdb
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\obj\Debug\netcoreapp3.1\NewCoreClassLibrary.csproj.CoreCompileInputs.cache
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\obj\Debug\netcoreapp3.1\NewCoreClassLibrary.AssemblyInfoInputs.cache
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\obj\Debug\netcoreapp3.1\NewCoreClassLibrary.AssemblyInfo.cs
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\obj\Debug\netcoreapp3.1\NewCoreClassLibrary.dll
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\obj\Debug\netcoreapp3.1\NewCoreClassLibrary.pdb
+D:\A-SNarayan\Sheo\Tutorials\DotNetCore2020\Apps\NewCore3xMVC\NewCoreClassLibrary\obj\Debug\netcoreapp3.1\NewCoreClassLibrary.csprojAssemblyReference.cache

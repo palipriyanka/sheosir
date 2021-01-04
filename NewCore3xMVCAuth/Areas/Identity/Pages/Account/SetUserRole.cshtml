@@ -1,0 +1,50 @@
+﻿@page
+@model NewCore3xMVCAuth.Areas.Identity.Pages.Account.SetUserRoleModel
+@{
+    ViewData["Title"] = "Set user roles";
+    var users = (IList<IdentityUser>)ViewBag.Users;
+    var roles = (IList<IdentityRole>)ViewData["Roles"];
+}
+
+<h2>Set User Roles</h2>
+@if (ViewData["Success"] != null)
+{
+    <div class="text-success">Role attached to the selected user.</div>
+}
+<form id="SetUserRole" method="post">
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th>User Name</th>
+            <th>Roles</th>
+        </tr>
+        @foreach (var item in users)
+        {
+            <tr>
+                <td>
+                    <input type="radio" required name="SelectedUser" value="@item.Id" />
+                </td>
+                <td>@item.UserName</td>
+                <td>
+                    <a href="/Identity/Account/UserRoles?id=@item.Id">See Roles</a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td>
+                <select name="SelectedRole" id="SelectedRole" class="form-control">
+                    @foreach (var item in roles)
+                    {
+                        <option value="@item.Name">@item.Name</option>
+                    }
+                </select>
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="Submit" value="Submit" class="btn btn-primary" />
+            </td>
+        </tr>
+    </table>
+</form>

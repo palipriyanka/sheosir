@@ -1,0 +1,43 @@
+﻿@page
+@model NewCore3xMVCAuth.Areas.Identity.Pages.Account.AddRoleModel
+@{
+    var roles = (IList<IdentityRole>)ViewData["Roles"];
+    ViewData["Title"] = "Roles";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-6">
+        <section>
+            <form id="account" method="post">
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label>Role Name</label>
+                    <input name="RoleName" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create Role</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-6">
+        <h4>Roles</h4>
+        <table class="table table-striped">
+            <tr>
+                <th>Role Id</th>
+                <th>Role Name</th>
+            </tr>
+            @foreach (var item in roles)
+            {
+                <tr><td>@item.Id</td><td>@item.Name</td></tr>
+            }
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

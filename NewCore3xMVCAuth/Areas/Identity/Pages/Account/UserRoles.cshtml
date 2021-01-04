@@ -1,0 +1,19 @@
+﻿@page
+@model NewCore3xMVCAuth.Areas.Identity.Pages.Account.UserRolesModel
+@{
+    ViewData["Title"] = "Roles";
+    var roles = (IList<string>)ViewData["Roles"];
+    var thisUser = (IdentityUser)ViewData["ThisUser"];
+}
+
+<h2>Roles  for <span class="text-success">@thisUser.UserName</span> </h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Role Name</th>
+    </tr>
+    @foreach (var item in roles)
+    {
+        <tr><td>@item</td></tr>
+    }
+</table>

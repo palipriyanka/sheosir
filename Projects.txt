@@ -1,0 +1,29 @@
+NewCore3xAPI
+--------------------
+.NET Core 3.x API project
+
+NewCore3xAPIConsumer
+----------------------------
+.NET Core 3.x API Consumer projet that consumers NewCore3xAPI project
+
+NewCore3xMVC
+--------------------
+.NET Core 3.x MVC project
+
+NewCore3xMVCAuth
+--------------------
+.NET Core 3.x MVC project with authentication and authorization
+
+NewCoreClassLibrary
+-------------------------
+.NET Core class library
+
+NewCoreConsoleApp
+-------------------------
+.NET Core console application that consumes NEwCoreClassLibrary
+
+RepositoryPattern
+---------------------
+Implementation of Repository pattern
+
+

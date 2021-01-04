@@ -1,0 +1,51 @@
+﻿@using RepositoryPattern.Models
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+<div class="card card-body bg-light">
+    <form asp-action="Search" class="form-inline">
+        <div class="form-group">
+            <label class="control-label">Field Name &nbsp;&nbsp;</label>
+            <select name="FieldName" class="form-control">
+                <option value="ID">ID</option>
+                <option value="Name">FullName</option>
+                <option value="Age">Age</option>
+                <option value="DOJ">Date Of Joining</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label">&nbsp;&nbsp;Keyword &nbsp;&nbsp; </label>
+            <input type="text" placeholder="Keyword" name="Keyword" id="Keyword" required class="form-control" />
+        </div>
+        <div class="form-group">
+            &nbsp;&nbsp;<input type="submit" value="Go" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>DOJ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.FullName</td>
+                    <td>@item.Age</td>
+                    <td>@item.DOJ</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

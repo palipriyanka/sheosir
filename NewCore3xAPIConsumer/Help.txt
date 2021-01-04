@@ -1,0 +1,3 @@
+﻿https://www.yogihosting.com/jwt-api-aspnet-core/
+
+With jQuery - https://www.yogihosting.com/jwt-jquery-aspnet-core/

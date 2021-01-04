@@ -1,0 +1,4 @@
+D:\priyanka\NewCore3xMVC\RepositoryPattern\obj\Debug\netcoreapp3.1\RepositoryPattern.csprojAssemblyReference.cache
+D:\priyanka\NewCore3xMVC\RepositoryPattern\obj\Debug\netcoreapp3.1\RepositoryPattern.AssemblyInfoInputs.cache
+D:\priyanka\NewCore3xMVC\RepositoryPattern\obj\Debug\netcoreapp3.1\RepositoryPattern.AssemblyInfo.cs
+D:\priyanka\NewCore3xMVC\RepositoryPattern\obj\Debug\netcoreapp3.1\RepositoryPattern.csproj.CoreCompileInputs.cache

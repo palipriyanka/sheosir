@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewData["Title"] = "JavaScript Call";
+}
+
+<h1>JavaScript Call</h1>
+
+<input type="button" class="btn btn-success" onclick="GetAuthToken()" value="Get Authenticated" />
+<input type="button" class="btn btn-success" onclick="ListRecords()" value="List Records" />
+<div class="text-danger" id="divMessage"></div>
+List of records from secured Web API, being called from jQuery/JavaScript. 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Auto Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script>
+        var _authToken = '';
+        function ListRecords() {
+            $.ajax({
+                url: "http://localhost:57358/api/People",
+                type: "get",
+                headers: {
+                    'Authorization': 'Bearer ' + _authToken
+                },
+                contentType: "application/json",
+                success: function (result, status, xhr) {
+                    //alert(JSON.stringify(result));
+                    var tr = '';
+                    $.each(result, function (index, value) {
+                        tr += '<tr>' +
+                            '<td>' + value["autoId"] + '</td><td>' + value["firstName"] + '</td>' +
+                            '<td>' + value["lastName"] + '</td><td>' + value["age"] + '</td><td>' + value["active"] + '</td>' +
+                            '</tr>';
+                    });
+                    $("tbody").append(tr);
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.status);
+                    if (xhr.status == 401) {
+                        $("#divMessage").html('Please <a href="/Home/Login">login</a> and try again.');
+                    }
+                    else {
+                        $("#divMessage").html(JSON.stringify(xhr));
+                    }
+                }
+            });
+        }
+
+        function GetAuthToken() {
+            $.ajax({
+                url: "https://localhost:44363/Home/GetJWTToken",
+                type: "get",
+                contentType: "application/json",
+                success: function (result, status, xhr) {
+                    _authToken = result;
+                    alert(_authToken);
+                    if (result == '') {
+                        $("#divMessage").html('Please <a href="/Home/Login">login</a> and try again.');
+                    }
+                    else {
+                        $("#divMessage").html('');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.status);
+                    if (xhr.status == 401) {
+                        $("#divMessage").html('Please <a href="/Home/Login">login</a> and try again.');
+                    }
+                    else {
+                        $("#divMessage").html(JSON.stringify(xhr));
+                    }
+                }
+            });
+        }
+    </script>
+}

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<NewCore3xMVC.Models.Person>
+
+@{
+    ViewData["Title"] = "People";
+}
+
+<h1>Index</h1>
+@DateTime.Now
+<p>
+    <a asp-action="Create">Create New</a> | <a asp-action="CacheIndex" target="_blank">Cache Index</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AutoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AutoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AutoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AutoId">Delete</a>
+            </td>
+        </tr>
+            <tr>
+                <td colspan="5">
+                    @if (item.Address != null)
+                    {
+                        <text><i>@(item.Address.AddressLine + ", "+ item.Address.City + ", "+ item.Address.Pin)</i></text>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

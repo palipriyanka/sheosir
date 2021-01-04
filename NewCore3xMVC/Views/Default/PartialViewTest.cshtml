@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "PartialViewTest";
+}
+<h1>Partial View Test</h1>
+
+<h3>Partial view from ~/Shared folder</h3>
+<code>@Html.Raw(Html.Encode("<partial name=\"_CurrentDateTime\" />"))</code>
+<partial name="_CurrentDateTime" />
+
+<code>@@await Html.PartialAsync("_CurrentDateTime")</code>
+@await Html.PartialAsync("_CurrentDateTime")
+
+<code>@@{ await Html.RenderPartialAsync("_CurrentDateTime"); }</code>
+@{
+    await Html.RenderPartialAsync("_CurrentDateTime");
+}\
+
+<hr />
+<h3>Partial view from ~/Other views folder</h3>
+<code>@Html.Raw(Html.Encode("<partial name=\"_DefaultPartial\" />"))</code>
+<partial name="_DefaultPartial" />
+
+<code>@@await Html.PartialAsync("~/Views/Home/_HomePartial.cshtml")</code>
+@await Html.PartialAsync("~/Views/Home/_HomePartial.cshtml")
+<hr />
+<h3>Partial View with Model</h3>
+<code>
+    @@{ await Html.RenderPartialAsync("_PartialViewWithModel", "Partial View Tutorials");}
+</code>
+@{
+    await Html.RenderPartialAsync("_PartialViewWithModel", "Partial View Tutorials");
+}

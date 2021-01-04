@@ -1,0 +1,55 @@
+﻿@inject NewCore3xMVC.DependencyInjection.IAgeCalculator _ageCalculator;
+
+@{
+    ViewData["Title"] = "Calculate your age";
+    var age = DateTime.Today;
+    if (ViewBag.DOB != null)
+    {
+        age = DateTime.Parse(ViewBag.DOB.ToString());
+    }
+
+    DateTime dateTime = DateTime.Today.AddYears(-30);
+
+}
+<h1>Using Dependency Injection</h1>
+<hr />
+<h3>Controller Level Age Calculator Service Injection</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label>Your DOB</label>
+                        <input type="date" name="YourAge" value="@(age.ToString("yyyy") + "-" + age.ToString("MM") + "-" + age.ToString("dd"))" id="YourAge" required class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Calculate your age" class="btn btn-primary" />
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        @if (ViewBag.YourAge != null)
+        {
+            <div>
+                <h6>Your age is @ViewBag.YourAge</h6>
+            </div>
+        }
+    </div>
+</div>
+<br />
+<br />
+<h3>Views Level Age Calculator Service Injection</h3>
+<div class="card card-body card-deck">
+    <h6>
+
+        If your DOB is @dateTime, your age is @_ageCalculator.GetMyAge(dateTime)
+
+    </h6>
+</div>
